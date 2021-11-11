@@ -50,6 +50,22 @@ namespace Hotel.Controllers
             );
         }
 
+        [HttpPost("/api/services/book/{id}")]
+        public ActionResult<Service> Update(string id)
+        {
+            var service = _service.Get(id);
+            if (service == null)
+            {
+                return NotFound();
+            }
+            if (service.Availability == true)
+            {
+                service.Availability = false;
+            }
+            _service.Edit(id, service);
+
+            return Ok();
+        }
         [HttpDelete("{id:length(24)}")]
         public IActionResult Delete(string id)
         {

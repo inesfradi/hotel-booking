@@ -19,6 +19,6 @@ namespace Hotel.Models
 
         public string Image { get; set; }
 
-        public bool Availability { get; init; }
+        public bool Availability { get; set; }
     }
 }

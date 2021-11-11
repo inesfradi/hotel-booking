@@ -34,6 +34,11 @@ namespace Hotel.Services
             return _services.Find<Service>(filter).FirstOrDefault();
         }
 
+        public void Edit(string id, Service service)
+        {
+            _services.ReplaceOne(service => service.Id == id, service);
+            
+        }
         public Service Create(Service service)
         {
             _services.InsertOne(service);

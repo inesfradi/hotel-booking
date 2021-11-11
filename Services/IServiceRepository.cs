@@ -10,6 +10,7 @@ namespace Hotel.Services
         IEnumerable<Service> Get();
         Service Get(string id);
         void Remove(string id);
+        void Edit(string id, Service service);
         Service Create(Service service);
     }
 }
